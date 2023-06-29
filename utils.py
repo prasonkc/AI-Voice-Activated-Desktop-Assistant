@@ -13,21 +13,21 @@ def speak(inp):
 
 
 def listen():
-    # rec = sr.Recognizer()
-    # mic = sr.Microphone(device_index=1)  # my device index is 1, you have to put your device index
+    rec = sr.Recognizer()
+    mic = sr.Microphone(device_index=1)  # my device index is 1, you have to put your device index
 
-    # try:
-    #     with mic as source:
-    #         print("Listening...")
-    #         rec.adjust_for_ambient_noise(source)  # reduce noise
-    #         audio = rec.listen(source)
-    #         text = rec.recognize_google(audio)  # take voice input from the microphone
-    #     return text
+    try:
+        with mic as source:
+            print("Listening...")
+            rec.adjust_for_ambient_noise(source)  # reduce noise
+            audio = rec.listen(source)
+            text = rec.recognize_google(audio)  # take voice input from the microphone
+        return text
     return input("command: ")
 
-    # except sr.UnknownValueError:
-    #     print("Sorry, I couldn't understand.")
-    # except sr.RequestError as e:
-    #     print("Sorry, an error occurred while recognizing speech:", str(e))
+    except sr.UnknownValueError:
+        print("Sorry, I couldn't understand.")
+    except sr.RequestError as e:
+        print("Sorry, an error occurred while recognizing speech:", str(e))
 
 
