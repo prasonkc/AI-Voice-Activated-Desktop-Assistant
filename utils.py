@@ -7,7 +7,7 @@ def speak(inp):
     print("Ai :" + inp)
     engine = pyttsx3.init()
     voice = engine.getProperty('voices')
-    engine.setProperty('voice', voice[3].id)  # set 1
+    engine.setProperty('voice', voice[1].id)  # set 1
     engine.say(inp)
     engine.runAndWait()
 
